@@ -1,0 +1,23 @@
+<%- include("partials/header.ejs") %>
+<body>
+    <main>
+        <div id="title-container"> 
+                <div id="title">
+                    <p>What's the weather?</p>
+                </div>
+                <div class="svg">
+                    <img height="100px" width="100px" src="images/cloudy-day-2.svg" alt="weather-icon">
+                </div>
+         </div>
+        <div class="wrap">
+            <div class="search">
+                <form action="/showWeather" method="POST">               
+                   <input type="text" class="searchTerm" name="city" placeholder="Enter your location...">
+                   <button type="submit" class="searchButton">
+                     <i class="fa fa-search"></i>
+                   </button>     
+                </form>
+            </div>
+         </div>  
+    </main> 
+<%- include("partials/footer.ejs") %>

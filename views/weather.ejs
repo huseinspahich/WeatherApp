@@ -1,0 +1,57 @@
+<%- include("partials/header.ejs") %>
+<main>
+    <div class ="container">
+        <div class="head">
+            <div class="name">
+               <h3 id="city"> <%= city %></h3>
+               <h3 id="date"><%= date %></h3>    
+            </div>
+          <div class="temperature-description">
+            <img height="85px" width="85px" src="images/cloudy-day-2.svg" alt="">
+            <p> <%= result.weather[0].description %></p>
+          </div>
+          <div class="temperature-now">
+            <img height="45px" width="45px" src="images/medium-temperature-icon.svg" alt="">
+            <p><%= result.main.temp %> °C </p>
+          </div>
+          <div class="temperature-min">
+            <p>Min Temp | Max Temp</p>
+            <p><%= result.main.temp_min %>°C | <%= result.main.temp_max %>°C</p>
+          </div>
+        </div>
+          <div class ="flex-column">
+                    <div class ="box">
+                        <div style="margin-right: 20px;"><img height="90px" width="90px" src="images/humidity.svg" alt=""></div>
+                        <div class="box1">
+                            <p style="margin-bottom: 0px;">HUMIDITY </p>
+                            <p><%= result.main.humidity %> %</p>    
+                        </div>
+                        
+                    </div>
+                    <div class ="box">
+                        <div style="margin-right: 20px;"><img height="90px" width="90px" src="images/wind.svg" alt=""></div>
+                        <div class="box2">
+                         <p style="margin-bottom: 0px;"><span>WIND SPEED</span></p>
+                        <p> <%= result.wind.speed %> mph</p>   
+                        </div>
+                    </div>
+                    <div class ="box">
+                        <div style="margin-right: 20px;"><img height="90px" width="90px" src="images/visibility.png" alt=""></div>
+                        <div class="box3">
+                             <p style="margin-bottom: 0px;">VISIBILITY</p>
+                        <p > <%= result.visibility %> miles</p>
+                        </div>
+                    </div>
+                    <div class ="box">
+                        <div style="margin-right: 20px;"><img height="90px" width="90px" src="images/pressure.svg.svg" alt=""></div>
+                        <div class="box4">
+                            <p style="margin-bottom: 0px;">PRESSURE </p>
+                        <p><%= result.main.pressure %> inHg</p>
+                        </div>
+                        
+                    </div>
+            </div>
+     </div>
+</main>
+
+<%- include("partials/footer.ejs") %>
